@@ -1,0 +1,8 @@
+.main-container{
+    background-color: #6A5BE2;
+    height: 100vh;
+    grid-template-columns: 230px auto;
+}
+.main-right-container{
+    grid-template-rows: 50px;
+}
