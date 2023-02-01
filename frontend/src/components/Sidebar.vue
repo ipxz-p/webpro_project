@@ -1,8 +1,6 @@
 <template>
-    <div class="h-full bg-white rounded-lg">
-        <div class="">
-            Sidebar
-        </div>
+    <div class="bg-white h-full w-[250px] rounded-md">
+        
     </div>
 </template>
 
