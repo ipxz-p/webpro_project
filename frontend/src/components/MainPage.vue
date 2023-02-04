@@ -4,7 +4,7 @@
             <Sidebar />
             <div class="w-full h-full md:ml-3 flex flex-col">
                 <Topbar />
-                <div class="bg-white h-full mt-3 overflow-x-hidden rounded-md px-6 py-4 font-light">
+                <div class="bg-white h-full mt-3 overflow-x-hidden rounded-md p-4 md:px-6 md:py-4 font-light">
                     <router-view />
                 </div>
             </div>
