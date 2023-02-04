@@ -6,7 +6,16 @@ module.exports = {
     
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        mypurple: {
+          200: '#E6E2FA',
+          300: '#9088E6',
+          400: '#6A5BE2',
+          500: '#4E42AA'
+        }
+      },
+    },
   },
   plugins: [
     
