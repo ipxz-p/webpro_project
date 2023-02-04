@@ -15,6 +15,9 @@ module.exports = {
           500: '#4E42AA'
         }
       },
+      screens: {
+        'max_md': {'max': '767px'},
+      },
     },
   },
   plugins: [

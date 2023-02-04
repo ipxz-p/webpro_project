@@ -2,23 +2,16 @@ import { createStore } from "vuex";
 
 const store = createStore({
     state: {
-        food: 'ต้มยำกุ้ง',
-        sport: 'ข่าไก่'
+        navMobile: false
     },
     
     mutations: {
-        setFood(state, food){
-            state.food = food
+        setnavMobile(state, navMobile){
+            state.navMobile = !navMobile
         },
-        setSport(state, sport){
-            state.sport = sport
-        }
     },
     getters: {
-        food:state=>{
-            return state.food
-        },
-        sport:state=>state.sport
+        navMobile:state=>state.navMobile
         
     }
 })

@@ -1,6 +1,13 @@
 <template>
-    <div class="bg-white h-full w-[250px] rounded-md py-2 px-4">
-        <p class="text-mypurple-400 text-2xl logo">Seravabi</p>
+    <div 
+    :class="{ showNavMobile: this.$store.state.navMobile }"
+    class="bg-white h-full md:w-[250px] w-full md:rounded-md py-2 px-4 md:relative z-50 
+    fixed max_md:top-[-100vh] transition-all duration-200"
+    >
+        <div class="flex justify-between items-center">
+            <p class="text-mypurple-400 text-2xl logo">Seravabi</p>
+            <svg @click="setnavMobile" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:hidden cursor-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
         <div class="mt-4">
             <router-link to="/">
                 <div class="transition-all duration-200 bg-mypurple-200 hover:bg-mypurple-300 hover:text-white text-mypurple-500 py-2 px-3 flex font-medium rounded-md cursor-pointer">
@@ -45,9 +52,17 @@
 <script>
     export default {
         name: "Sidebar",
+        methods: {
+            setnavMobile(){
+                this.$store.commit('setnavMobile', this.$store.state.navMobile)
+            }
+        }
     }
 </script>
 
 <style>
-
+.showNavMobile{
+    top: 0;
+    left: 0;
+}
 </style>

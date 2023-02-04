@@ -5,10 +5,15 @@
 body{
     font-family: 'Lexend', sans-serif;
 }
-
 .logo{
     font-family: 'Pacifico', cursive;
 }
 ::-webkit-scrollbar {
     display: none;
+}
+
+/* navbar */
+.setnavMobile{
+    top: 0;
+    
 }
