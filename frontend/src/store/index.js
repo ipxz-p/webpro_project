@@ -1,18 +1,14 @@
 import { createStore } from "vuex";
-
+import { mutations } from "./mutations";
 const store = createStore({
     state: {
-        navMobile: false
+        navMobile: false,
+        usernName: JSON.parse(localStorage.getItem('user')) 
     },
-    
-    mutations: {
-        setnavMobile(state, navMobile){
-            state.navMobile = !navMobile
-        },
-    },
+    mutations: mutations,
     getters: {
-        navMobile:state=>state.navMobile
-        
+        navMobile:state=>state.navMobile,
+        userName:state=>state.usernName
     }
 })
 

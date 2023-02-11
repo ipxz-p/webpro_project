@@ -8,7 +8,7 @@ export const register = async (req, res) => {
         if(!username || !password){
             return res.status(400).json({message: 'Please enter username and password'})
         }
-        db.query("SELECT * FROM `user` where username = ?", 
+        db.query("SELECT * FROM `user` where username = ? limit 1", 
         username,
         function (err, results) {
             if(err) throw err;
@@ -28,3 +28,35 @@ export const register = async (req, res) => {
     }
 } 
 
+export const login = async (req, res) => {
+    try {
+        const {username, password} = req.body;
+        if(!username || !password){
+            return res.status(400).json({message: 'Please enter username and password'})
+        }
+        db.query("SELECT * FROM `user` where username = ? limit 1", 
+        username,
+        async function (err, results) {
+            if(err) throw err;
+            if (!results.length){
+                return res.status(400).json({message: "Username or password incorrect"})
+            }
+            // compare password
+            const match = await bcrypt.compare(password, results[0].password)
+            if(!match){
+                return res.status(400).json({message: "Username or password incorrect"})
+            }
+            else{
+                let token = jwt.sign({id: username}, process.env.ACCESS_TOKEN, {
+                    expiresIn: 86400 //1 day
+                })
+                res.status(200).json({
+                    username: username,
+                    accessToken: token
+                })
+            }
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
