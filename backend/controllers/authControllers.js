@@ -2,11 +2,21 @@ import bcrypt from 'bcrypt';
 import jwt  from 'jsonwebtoken';
 import db from "../config/database.js";
 
+
 export const register = async (req, res) => {
     try {
-        const {username, password} = req.body
-        if(!username || !password){
+        const {username, password, checkPassword} = req.body
+        if(!username || !password || !checkPassword){
             return res.status(400).json({message: 'Please enter username and password'})
+        }
+        if(username.length < 4){
+            return res.status(400).json({message: 'username need to be 4 characters or longer'})
+        }
+        if(password.length < 6){
+            return res.status(400).json({message: 'password need to be 6 characters or longer'})
+        }
+        if(password != checkPassword){
+            return res.status(400).json({message: "Password and confirm password don't match"})
         }
         db.query("SELECT * FROM `user` where username = ? limit 1", 
         username,
@@ -20,7 +30,9 @@ export const register = async (req, res) => {
                 const hashPassword = bcrypt.hashSync(password, 8)
                 db.query("INSERT INTO `user`(`username`, `password`) VALUES (?,?)",
                 [username, hashPassword])
-                res.send("Success")
+                res.status(200).json({
+                    message: 'Success'
+                })
             }
         })
     } catch (error) {
