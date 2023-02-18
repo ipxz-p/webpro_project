@@ -10,12 +10,14 @@ import '@mdi/font/css/materialdesignicons.css'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import VueCookies from 'vue-cookies';
-
+import * as labs from 'vuetify/labs/components'
 const vuetify = createVuetify({
     cons: {
         defaultSet: 'mdi',
     },
-    components,
+    components: {
+        ...labs,
+    },
     directives,
 })
 createApp(App)

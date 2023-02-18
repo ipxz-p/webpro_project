@@ -22,6 +22,11 @@ const routes = [
                 component: () => import('../views/Myword.vue'),
             },
             {
+                path: '/myword/:id',
+                name: 'WordByID',
+                component: () => import('../views/WordByID.vue'),
+            },
+            {
                 path: '/history',
                 name: 'History',
                 component: () => import('../views/History.vue'),
@@ -36,6 +41,7 @@ const routes = [
                 name: 'Notification',
                 component: () => import('../views/Notification.vue'),
             },
+
         ]
     },
     {

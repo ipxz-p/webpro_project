@@ -4,7 +4,7 @@
     class="bg-white h-full md:w-[250px] w-full md:rounded-md py-2 px-4 md:relative z-50 flex flex-col
     fixed max_md:top-[-100vh] left-0 transition-all duration-300 "
     >
-        <div class="flex justify-between items-center max_md:py-2">
+        <div class="flex justify-between items-center max_md:py-2 mt-2">
             <p class="text-mypurple-400 text-2xl logo">Seravabi</p>
             <svg @click="setnavMobile" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:hidden cursor-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </div>
