@@ -86,13 +86,5 @@
 </script>
 
 <style lang="scss">
-div.v-application {
-    display: block;
-    th {
-        white-space: nowrap;
-    }
-    div.v-content__wrap {
-        width: 100%;
-    }
-}
+
 </style>

@@ -16,7 +16,7 @@
                     <div class="mt-2">
                         <h1>Password</h1>
                         <div class="px-3 mt-1 border-2 border-gray-300 w-full rounded-xl h-10">
-                            <input v-model="password" class="outline-0 w-full h-full" type="password" name="" placeholder="Min 6 character" >
+                            <input v-model="password" class="outline-0 w-full h-full" type="password" name="password" placeholder="Min 6 character" >
                         </div>
                     </div>
                     <button @click="login()" class="w-full bg-mypink text-white py-2 mt-8 rounded-xl" type="submit">Login</button>
@@ -51,7 +51,7 @@
                     .then((response) => {
                         if(response.data.accessToken){
                             localStorage.setItem('user', JSON.stringify(response.data));
-                            this.$router.push({ name: 'Home' })
+                            this.$router.push({ name: 'Home' }).then(() => window.location.reload())
                         }
                     })
                     .catch((err) => {

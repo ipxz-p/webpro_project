@@ -3,6 +3,9 @@ export const mutations = {
         state.navMobile = !navMobile
     },
     setUsername(state, userName){
-        state.usernName = userName
-    }
+        state.userName = userName
+    },
+    setshowPopup(state, showPopup){
+        state.showPopup = !showPopup
+    },
 }

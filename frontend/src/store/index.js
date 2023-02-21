@@ -3,12 +3,14 @@ import { mutations } from "./mutations";
 const store = createStore({
     state: {
         navMobile: false,
-        usernName: JSON.parse(localStorage.getItem('user')) 
+        userName: JSON.parse(localStorage.getItem('user')) || "",
+        showPopup: false
     },
     mutations: mutations,
     getters: {
         navMobile:state=>state.navMobile,
-        userName:state=>state.usernName
+        userName:state=>state.userName,
+        showPopup:state=>state.showPopup
     }
 })
 
