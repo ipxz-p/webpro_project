@@ -7,5 +7,12 @@ export const mutations = {
     },
     setshowPopup(state, showPopup){
         state.showPopup = !showPopup
+        
+    },
+    settypePopup(state, typePopup){
+        state.typePopup = typePopup
+    },
+    setidWordSet(state, idWordSet){
+        state.idWordSet = idWordSet
     },
 }

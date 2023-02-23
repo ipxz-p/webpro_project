@@ -1,6 +1,6 @@
 <template>
-    <div>
-        
+    <div class="">
+        Home
     </div>
 </template>
 
@@ -10,7 +10,8 @@
             return {
                 
             }
-        }
+        },
+        
     }
 </script>
 

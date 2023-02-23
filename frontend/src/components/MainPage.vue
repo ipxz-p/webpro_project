@@ -21,7 +21,6 @@ export default {
         Sidebar,
         Topbar
     },
-
 }
 </script>
 
