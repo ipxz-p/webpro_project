@@ -41,11 +41,11 @@
                                     </button>
                                     </MenuItem>
                                 </div>
-                                <div @click.prevent="setIdPopup(id), deleteWordSet()" class="px-1 py-1">
+                                <div @click.prevent="setIdPopup(id), setPopup('deleteWordSet')" class="px-1 py-1">
                                     <MenuItem v-slot="{ active }">
                                     <button
                                         :class="[
-                                        active ? 'bg-red-400 text-white' : 'text-gray-900',
+                                        active ? 'bg-red-600 text-white' : 'text-gray-900',
                                         'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                         ]"
                                     >
@@ -96,9 +96,6 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
                 this.$store.commit('setshowPopup', this.$store.state.showPopup)
                 this.$store.commit('settypePopup', type)
             },
-            deleteWordSet(){
-                this.$parent.deleteWordSet()
-            }
         }
     }
 </script>

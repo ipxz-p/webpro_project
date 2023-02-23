@@ -67,6 +67,22 @@
                     <button @click="editWordSet()" class="w-full bg-mypink text-white py-2 mt-4 rounded-xl" type="submit">Edit</button>
             </div>
         </Popup>
+        <!-- Popup comfirm before delete wordset -->
+        <Popup type="deleteWordSet" v-if="this.$store.state.showPopup && this.$store.state.typePopup === 'deleteWordSet'">
+            <!-- prevent event onclick when click here (@click.stop) -->
+            <div @click.stop="">
+                <div class="text-center p-4 text-2xl font-medium">
+                    Are you sure you want to delete this wordset
+                </div>
+                <div class="flex">
+                    <button @click="setPopup('deleteWordSet')" class="w-full py-2 mt-4 rounded-xl" type="submit">Cancel</button>
+                    <button @click="deleteWordSet()" class="w-full bg-red-600 text-white py-2 mt-4 flex items-center justify-center rounded-xl" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+                        <p>Delete</p>
+                    </button>
+                </div>
+            </div>
+        </Popup>
     </div>
 </template>
 
@@ -152,6 +168,7 @@
                     })
                     .then((res) => {
                         this.allWordSet = res.data
+                        this.setPopup('deleteWordSet')
                     })
                     .catch((err) => {
                         alert(err.response.data.message)
