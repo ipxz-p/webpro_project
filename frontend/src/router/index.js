@@ -8,7 +8,7 @@ const routes = [
         children: [
             {
                 path: '/',
-                name: 'Home',
+                name: '',
                 component: () => import('../views/index.vue'),
             },
             {
@@ -20,11 +20,6 @@ const routes = [
                 path: '/myword',
                 name: 'Myword',
                 component: () => import('../views/Myword.vue'),
-            },
-            {
-                path: '/myword/:id',
-                name: 'WordByID',
-                component: () => import('../views/WordByID.vue'),
             },
             {
                 path: '/history',
@@ -41,24 +36,26 @@ const routes = [
                 name: 'Notification',
                 component: () => import('../views/Notification.vue'),
             },
-
         ]
     },
     {
-        path: '/login',
-        name: 'Login',
-        component: () => import('../views/Login.vue')
+        path: '/play/flashcard',
+        name: 'FlashCard',
+        component: () => import('../views/FlashCard.vue'),
+        
     },
     {
-        path: '/register',
-        name: 'Register',
-        component: () => import('../views/Register.vue')
+        path: '/play/guessinggame',
+        name: 'GuessingGame',
+        component: () => import('../views/GuessingGame.vue'),
+        
     }
 ]
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    
 });
 
 export default router

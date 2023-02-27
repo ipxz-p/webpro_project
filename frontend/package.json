@@ -9,19 +9,18 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.9",
     "axios": "^1.2.3",
     "flowbite": "^1.6.3",
+    "i": "^0.3.7",
     "lucide-vue-next": "^0.108.0",
-    "material-design-icons-iconfont": "^6.7.0",
+    "swiper": "^9.0.3",
+    "tailwindcss-animated": "^1.0.0",
     "vue": "^3.2.45",
-    "vue-cookies": "^1.8.2",
     "vue-router": "^4.1.6",
-    "vuetify": "^3.1.5",
+    "vuetify": "^3.0.0",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@mdi/font": "^7.1.96",
     "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
@@ -30,8 +29,11 @@
     "eslint-plugin-vue": "^9.3.0",
     "postcss": "^8.4.21",
     "prettier": "^2.7.1",
-    "sass": "^1.58.3",
     "tailwindcss": "^3.2.4",
     "vite": "^4.0.0"
-  }
+  },
+  "license": "MIT",
+  "tags": [
+    "swiper"
+  ]
 }
