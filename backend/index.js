@@ -3,7 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/authRoutes.js'
-import wordSetRoutes from './routes/wordSetRoutes.js'
+import wordSetRoutes from './routes/wordSetRoutes.js';
+import wordRoutes from './routes/wordRoutes.js';
 
 dotenv.config();
 
@@ -18,6 +19,9 @@ app.use(cors({
 // routes
 app.use('/auth', authRoutes)
 app.use('/wordSet', wordSetRoutes)
+app.use('/word', wordRoutes)
+
+
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
