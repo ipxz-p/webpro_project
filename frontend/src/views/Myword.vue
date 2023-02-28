@@ -18,7 +18,7 @@
                 :id="item.wordSet_id" :name="item.name" :description="item.description" :total_word="item.total_word" :total_play="item.total_play"
                 />
         </div>
-        <div v-else>
+        <div v-else class="mt-4">
             no data
         </div>
         <!-- Popup add wordset -->
